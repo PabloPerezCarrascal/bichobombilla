@@ -26,4 +26,5 @@ dependencies {
     compile 'com.loopj.android:android-async-http:1.4.9'
     compile 'ai.api:sdk:2.0.7@aar'
     compile 'ai.api:libai:1.6.12'
+
 }
