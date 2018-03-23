@@ -23,7 +23,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.3"
             android:gravity="center"
-            android:textSize="50sp" />
+            android:textSize="40sp" />
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/intent"
@@ -31,16 +31,26 @@
             android:layout_height="match_parent"
             android:layout_weight="0.3"
             android:gravity="center"
+            android:textColor="#FFFFF0"
             android:textSize="30sp" />
 
-        <android.support.v7.widget.AppCompatTextView
-            android:id="@+id/output"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.3"
-            android:gravity="center"
-            android:textSize="50sp" />
+            android:textColor="#FFFFF0"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
 
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/output"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="#548aff"
+                android:textSize="40sp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

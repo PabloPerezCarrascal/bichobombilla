@@ -42,6 +42,7 @@ public class VoiceToApi extends AppCompatActivity implements AIListener {
     private TextView inputQueryTv;
     private TextView intentTv;
     private TextView outputTv;
+    private TextView promptTv;
 
     private ImageButton mSpeakBtn;
 
@@ -94,7 +95,9 @@ public class VoiceToApi extends AppCompatActivity implements AIListener {
                 cont.put("name", context.getName());
                 JSONObject param = new JSONObject();
                 for (final Map.Entry<String, JsonElement> entry : context.getParameters().entrySet()) {
-                    param.put(entry.getKey(), entry.getValue());
+                    if (!entry.getKey().contains("original")){
+                        param.put(entry.getKey(), entry.getValue());
+                    }
                 }
                 cont.put("parameters", param);
                 cont.put("lifespan", context.getLifespan());
@@ -112,8 +115,7 @@ public class VoiceToApi extends AppCompatActivity implements AIListener {
 
         inputQueryTv.setText(result.getResolvedQuery());
         intentTv.setText(result.getAction());
-        outputTv.setText(speech);
-
+        outputTv.setText("> " + speech);
         new SendToBicho().execute(json.toString());
     }
 
